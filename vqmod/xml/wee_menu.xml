@@ -1,0 +1,23 @@
+<modification>
+	<id>Wee PIN Management</id>
+	<version>1.0.0</version>
+	<vqmver>1.0.0</vqmver>
+	<author>Mohammad Mahdi Sahebi (msahebi@gmail.com)</author>
+	<file name="admin/controller/common/column_left.php">
+		<operation error="skip">
+			<search position="before"><![CDATA[
+		$report = array();
+]]></search>
+			<add><![CDATA[
+
+			$data['menus'][] = array(
+					'id'       => 'wee-pin-management',
+					'icon'	   => 'fa-space-shuttle',
+					'name'	   => 'Wee PIN',
+					'href'     =>  $this->url->link('extension/module/wee', 'token=' . $this->session->data['token'], 'SSL'),
+					'children' => array()
+				);
+]]></add>
+		</operation>
+	</file>
+</modification>
